@@ -1,5 +1,3 @@
-import javax.sound.midi.Track;
-
 /** Represnts a list of musical tracks. The list has a maximum capacity (int),
  *  and an actual size (number of tracks in the list, an int). */
 class PlayList {
