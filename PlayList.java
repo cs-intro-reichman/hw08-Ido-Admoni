@@ -1,3 +1,5 @@
+import javax.sound.midi.Track;
+
 /** Represnts a list of musical tracks. The list has a maximum capacity (int),
  *  and an actual size (number of tracks in the list, an int). */
 class PlayList {
@@ -116,8 +118,17 @@ class PlayList {
      *  If the list is empty, or the given index is negative or too big for this list, 
      *  does nothing and returns -1. */
     public void remove(int i) {
-        //// replace this comment with your code
+    if (size == 0 || i < 0 || i >= size) {
+        return;
     }
+    for (int j = i; j < size - 1; j++) {
+        tracks[j] = tracks[j + 1];
+    }
+    
+    // Set the last element to null and decrement the size
+    tracks[size - 1] = null;
+    size--;
+}
 
     /** Removes the first track that has the given title from this list.
      *  If such a track is not found, or the list is empty, or the given index
